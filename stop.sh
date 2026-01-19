@@ -1,16 +1,14 @@
 #!/bin/bash
 
-sudo -i
-
-if [ -f /echo.pid ]; then
+if sudo test -f "/echo.pid"; then
   echo "/echo.pid exists"
 fi
 
-if [ /root/echo.pid ]; then
+if sudo test -f "/root/echo.pid"; then
   echo "/root/echo.pid exist"
 fi
 
-if [ /home/mthizo247/echo.pid ]; then
+if sudo test -f "/home/mthizo247/echo.pid"; then
   echo "/home/mthizo247/echo.pid exist"
 fi
 
