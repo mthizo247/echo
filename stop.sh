@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo monit stop echo
+
 if sudo test -f "/echo.pid"; then
   sudo kill -9 $(sudo cat /echo.pid) || true
 fi
