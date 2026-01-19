@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello, World!"
+java -jar target/echo-1.jar
