@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar target/echo-1.jar
+java -jar /home/mthizo247/echo/target/echo-1.jar
