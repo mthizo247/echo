@@ -1,19 +1,13 @@
 #!/bin/bash
 
 if sudo test -f "/echo.pid"; then
-  echo "/echo.pid exists"
+  sudo kill -9 $(sudo cat /echo.pid)
 fi
 
 if sudo test -f "/root/echo.pid"; then
-  echo "/root/echo.pid exist"
+  sudo kill -9 $(sudo cat /root/echo.pid)
 fi
 
 if sudo test -f "/home/mthizo247/echo.pid"; then
-  echo "/home/mthizo247/echo.pid exist"
+  sudo kill -9 $(sudo cat /home/mthizo247/echo.pid)
 fi
-
-exit
-
-#sudo kill -9 $(cat /echo.pid) || true
-#sudo kill -9 $(cat /root/echo.pid) || true
-#sudo kill -9 $(cat /home/mthizo247/echo.pid) || true
