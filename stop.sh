@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo -i
+
 if [ -f /echo.pid ]; then
   echo "/echo.pid exists"
 fi
