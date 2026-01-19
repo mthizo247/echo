@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f "/echo.pid" ]; then
+if [ -f /echo.pid ]; then
   echo "/echo.pid exists"
 elif [ "/root/echo.pid" ]; then
   echo "/root/echo.pid exist"
