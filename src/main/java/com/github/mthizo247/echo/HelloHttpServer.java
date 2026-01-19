@@ -4,6 +4,8 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -14,6 +16,8 @@ public class HelloHttpServer {
     public static void main(String[] args) throws IOException {
         int port = 8086;
 
+        writePid();
+
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         server.createContext("/", new HelloHandler());
@@ -21,6 +25,24 @@ public class HelloHttpServer {
         server.start();
 
         System.out.println("Server started on http://localhost:" + port);
+    }
+
+    private static void writePid() throws IOException {
+        File file = new File(System.getProperty("user.home"), "echo.pid");
+
+        long pid = java.lang.ProcessHandle
+                .current()
+                .pid();
+
+        File parent = file.getParentFile();
+        if (parent != null) {
+            parent.mkdirs();
+        }
+
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.append(String.valueOf(pid));
+        }
+
     }
 
     static class HelloHandler implements HttpHandler {
