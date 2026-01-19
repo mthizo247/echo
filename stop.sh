@@ -14,6 +14,8 @@ if [ /home/mthizo247/echo.pid ]; then
   echo "/home/mthizo247/echo.pid exist"
 fi
 
+exit
+
 #sudo kill -9 $(cat /echo.pid) || true
 #sudo kill -9 $(cat /root/echo.pid) || true
 #sudo kill -9 $(cat /home/mthizo247/echo.pid) || true
